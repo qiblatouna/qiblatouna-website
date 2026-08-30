@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QIBLATOUNA ACADÉMIE</title>
+    <link rel="icon" type="image/jpeg" href="Picsart.png">
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-beige: #fdfbf7;
+            --bg-card: #ffffff;
+            --gold-primary: #b8860b;
+            --gold-dark: #8b6508;
+            --green-accent: #1b4d3e;
+            --text-dark: #111111;
+            --text-muted: #444444;
+            --whatsapp: #25D366;
+            --telegram: #0088cc;
+            --facebook: #1877F2;
+            --instagram: #E4405F;
+            --tiktok: #000000;
+            --youtube: #FF0000;
+            --border-gold: rgba(184, 134, 11, 0.35);
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-beige);
+            color: var(--text-dark);
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(253, 251, 247, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-gold);
+            z-index: 1000;
+            padding: 8px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .logo-container img {
+            height: 70px; 
+            object-fit: contain;
+            background-color: transparent !important;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active-link {
+            color: var(--gold-primary) !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--green-accent);
+            background: none;
+            border: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 160px 40px 90px;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.55);
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px; 
+            align-items: center;
+        }
+
+        .hero-left {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-right: 20px;
+            margin-top: 80px;
+        }
+
+        .hero-left h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4.1rem; 
+            color: var(--green-accent);
+            margin-bottom: 25px;
+            text-shadow: 0 3px 6px rgba(255, 255, 255, 0.9);
+            line-height: 1.15;
+        }
+
+        .hero-left p.hero-text {
+            font-size: 1.25rem; 
+            font-weight: 600;
+            color: #111111;
+            line-height: 1.7;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-left: 20px;
+        }
+
+        .pulse-text {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--green-accent);
+            margin-bottom: 30px;
+            line-height: 1.35;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.95);
+            animation: pulseAnimation 2s infinite ease-in-out;
+            max-width: 350px;
+        }
+
+        @keyframes pulseAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); color: var(--gold-dark); }
+            100% { transform: scale(1); }
+        }
+
+        .hero-right .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: white;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-telegram {
+            background-color: var(--telegram);
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.3);
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Sections */
+        .section {
+            padding: 90px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--green-accent);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gold-primary);
+            margin: 15px auto 0;
+        }
+
+        .matieres-grid, .modalites-grid, .pricing-grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .matieres-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .modalites-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .pricing-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+        .matiere-card, .modalite-box, .price-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 35px 25px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .matiere-card:hover, .price-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+        }
+
+        .matiere-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .matiere-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(184, 134, 11, 0.12);
+            color: var(--gold-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            border: 1px solid var(--border-gold);
+        }
+
+        .matiere-card h3, .modalite-box h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--green-accent);
+        }
+
+        .matiere-card ul {
+            list-style: none;
+            color: var(--text-muted);
+            line-height: 1.9;
+        }
+
+        .matiere-card ul li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 8px;
+        }
+
+        .matiere-card ul li::before {
+            content: '◆';
+            color: var(--gold-primary);
+            position: absolute;
+            left: 0;
+            font-size: 0.75rem;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 22px 25px;
+            font-size: 1.15rem;
+            color: var(--green-accent);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            background: var(--bg-card);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(184, 134, 11, 0.04);
+        }
+
+        .faq-question i {
+            color: var(--gold-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 25px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: rgba(253, 251, 247, 0.5);
+            border-top: 1px solid transparent;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 20px 25px;
+            border-top: 1px solid var(--border-gold);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Tarifs & Badge */
+        .badge-non-mixte-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .badge-non-mixte {
+            background: var(--bg-card);
+            border: 2px solid var(--green-accent);
+            color: var(--green-accent);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-soft);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-card {
+            text-align: center;
+        }
+
+        .price-amount {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            margin: 15px 0;
+        }
+
+        .price-amount span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .no-fees {
+            background: var(--bg-card);
+            border: 2px solid var(--gold-primary);
+            padding: 18px;
+            border-radius: 14px;
+            text-align: center;
+            margin-top: 35px;
+            font-weight: 600;
+            color: var(--gold-dark);
+            font-size: 1.05rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Footer Styles (معدل بالكامل حسب الطلب) */
+        footer {
+            background: #ffffff;
+            border-top: 1px solid var(--border-gold);
+            padding: 50px 20px 25px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            gap: 40px;
+            margin-bottom: 35px;
+            align-items: start;
+        }
+
+        /* 1. عمود التواصل على اليسار */
+        .footer-contact-col {
+            text-align: left;
+        }
+
+        .footer-contact-list {
+            list-style: none;
+        }
+
+        .footer-contact-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: flex-start;
+        }
+
+        .footer-contact-list a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-contact-list a:hover {
+            color: var(--gold-primary);
+        }
+
+        .footer-contact-list i {
+            color: var(--gold-dark);
+            width: 20px;
+        }
+
+        /* 2. عمود اللوغو والنص في الوسط (Centralisé ومزاح لليسار والأعلى قليلاً) */
+        .footer-brand-col {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateX(-35px) translateY(-12px);
+        }
+
+        .footer-logo-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand-col img {
+            height: 70px;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .footer-description {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            max-width: 380px;
+            margin: 0 auto;
+        }
+
+        /* 3. عمود متابعتنا على اليمين */
+        .footer-social-col {
+            text-align: left;
+        }
+
+        .footer-social-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(184, 134, 11, 0.1);
+            color: var(--green-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border: 1px solid var(--border-gold);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon.facebook:hover { background: var(--facebook); color: white; border-color: var(--facebook); }
+        .social-icon.instagram:hover { background: var(--instagram); color: white; border-color: var(--instagram); }
+        .social-icon.tiktok:hover { background: var(--tiktok); color: white; border-color: var(--tiktok); }
+        .social-icon.youtube:hover { background: var(--youtube); color: white; border-color: var(--youtube); }
+        .social-icon.telegram:hover { background: var(--telegram); color: white; border-color: var(--telegram); }
+
+        .footer-heading {
+            font-family: 'Cinzel', serif;
+            color: var(--green-accent);
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Floating buttons */
+        .floating-btn-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .floating-btn-container.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .float-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            color: white;
+            border-radius: 50%;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float { background-color: var(--whatsapp); }
+        .telegram-float { background-color: var(--telegram); }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav { padding: 10px 20px; }
+            .menu-toggle { display: block; }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(253, 251, 247, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                border-bottom: 1px solid var(--border-gold);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-in-out, padding 0.4s ease;
+                padding: 0 20px;
+            }
+
+            .nav-links.active {
+                max-height: 350px;
+                padding: 20px;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            .hero-left {
+                text-align: center;
+                align-items: center;
+                padding-right: 0;
+                margin-top: 20px;
+            }
+            .hero-left h1 { font-size: 2.8rem; }
+            .hero-left p.hero-text { font-size: 1.1rem; }
+            .hero-right { padding-left: 0; }
+            
+            /* Footer responsive adjustment */
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 35px;
+            }
+            .footer-contact-col, .footer-social-col {
+                text-align: center;
+            }
+            .footer-brand-col {
+                transform: none; /* إلغاء الإزاحة في الشاشات الصغيرة لضمان التوسيط الدقيق */
+            }
+            .footer-contact-list li {
+                justify-content: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+
+
+.pulse-text {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--green-accent);
+    margin-bottom: 30px;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+    padding: 12px 22px;
+    border-radius: 12px;
+    animation: glowingPulse 2s infinite ease-in-out;
+    max-width: 370px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--border-gold);
+}
+
+/* إضافة النجمة الذهبية المتحركة في البداية */
+.pulse-text::before {
+    content: '⭐ ';
+    color: var(--gold-primary);
+    font-size: 1.2rem;
+}
+
+@keyframes glowingPulse {
+    0% { 
+        transform: scale(1); 
+        box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.4);
+    }
+    50% { 
+        transform: scale(1.02); 
+        color: var(--gold-dark);
+        box-shadow: 0 0 20px 5px rgba(184, 134, 11, 0.25);
+    }
+    100% { 
+        transform: scale(1); 
+        box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.4);
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="QIBLATOUNA ACADÉMIE">
+        </div>
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="nav-links-menu">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#matieres">Matières</a></li>
+            <li><a href="#modalites">Modalités</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <h1>QIBLATOUNA ACADÉMIE</h1>
+                <p class="hero-text">
+                    Votre académie d'excellence pour l'apprentissage en ligne de la Langue Arabe, du Coran et des Sciences Islamiques. Des parcours sur-mesure pour enfants, adolescents et adultes.
+                </p>
+            </div>
+            <div class="hero-right">
+                <div class="pulse-text">
+                    Contactez-nous pour prendre votre séance gratuite !
+                </div>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/213555483522" class="btn-contact btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://t.me/+213555483522" class="btn-contact btn-telegram" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-telegram"></i> Telegram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matières -->
+    <section id="matieres" class="section">
+        <h2 class="section-title">Les Matières Enseignées</h2>
+        <div class="matieres-grid">
+            <div class="matiere-card">
+                <div class="matiere-header">
+                    <div class="matiere-icon"><i class="fas fa-book-open-reader"></i></div>
+                    <h3>Langue Arabe</h3>
+                </div>
+                <ul>
+                    <li>Lecture et écriture</li>
+                    <li>Alphabet arabe et phonétique</li>
+                    <li>Vocabulaire & Expression orale</li>
+                    <li>Grammaire simplifiée</li>
+                    <li>Compréhension & Conversation</li>
+                </ul>
+            </div>
+            <div class="matiere-card">
+                <div class="matiere-header">
+                    <div class="matiere-icon"><i class="fas fa-book-quran"></i></div>
+                    <h3>Coran</h3>
+                </div>
+                <ul>
+                    <li>Règles de Tajwid</li>
+                    <li>Correction de la récitation</li>
+                    <li>Mémorisation du Coran</li>
+                    <li>Révision continue des sourates</li>
+                </ul>
+            </div>
+            <div class="matiere-card">
+                <div class="matiere-header">
+                    <div class="matiere-icon"><i class="fas fa-mosque"></i></div>
+                    <h3>Sciences Islamiques</h3>
+                </div>
+                <ul>
+                    <li>Fiqh (Jurisprudence)</li>
+                    <li>Hadith & Aqida (Croyance)</li>
+                    <li>Sîra du Prophète ﷺ</li>
+                    <li>Adhkar & Éducation religieuse</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modalités -->
+    <section id="modalites" class="section">
+        <h2 class="section-title">Modalités des Cours</h2>
+        <div class="modalites-grid">
+            <div class="modalite-box">
+                <h4><i class="fas fa-video"></i> Format des cours</h4>
+                <p>Cours en ligne en direct via <strong>Zoom</strong> ou <strong>Telegram</strong>. Disponible en séance individuelle, en binôme ou en petits groupes.</p>
+            </div>
+            <div class="modalite-box">
+                <h4><i class="fas fa-users"></i> Public concerné</h4>
+                <p>Enfants, adolescents et adultes. Nos méthodes pédagogiques sont rigoureusement adaptées à chaque tranche d'âge.</p>
+            </div>
+            <div class="modalite-box">
+                <h4><i class="fas fa-clock"></i> Organisation flexible</h4>
+                <p>Emploi du temps aménagé selon vos disponibilités avec un rythme d'apprentissage personnalisé.</p>
+            </div>
+        </div>
+        <div class="badge-non-mixte-container">
+            <div class="badge-non-mixte">
+                <i class="fas fa-shield-halved"></i> Enseignement Non Mixte
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarifs -->
+    <section id="tarifs" class="section">
+        <h2 class="section-title">Nos Tarifs</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h4>Individuel</h4>
+                <div class="price-amount">6€ <span>/h</span></div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Accompagnement 100% sur-mesure</p>
+            </div>
+            <div class="price-card">
+                <h4>Binôme</h4>
+                <div class="price-amount">4€ <span>/h</span></div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Apprentissage à deux personnes</p>
+            </div>
+            <div class="price-card">
+                <h4>Petit Groupe</h4>
+                <div class="price-amount">3.50€ <span>/h</span></div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Enseignement en groupe restreint</p>
+            </div>
+        </div>
+        <div class="no-fees">
+            <i class="fas fa-star"></i> Tarifs symboliques — <strong>Aucuns frais d'inscription !</strong>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+        <h2 class="section-title">Questions Fréquentes (FAQ)</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Les cours sont-ils adaptés aux personnes qui ne parlent pas du tout arabe et qui ne le comprennent pas ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Oui, absolument ! Nos cours sont conçus pour accompagner chacun à son rythme, des débutants jusqu’aux niveaux intermédiaire et avancé.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Comment savoir quel niveau me convient ? Proposez-vous un test de niveau ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                   Bien sûr ! Votre niveau sera évalué lors de la séance d’essai و à l’aide d’un test, afin de vous orienter vers le programme le plus adapté à vos besoins.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Puis-je choisir un horaire qui me convient ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Oui, bien sûr ! Nous faisons de notre mieux pour trouver un horaire qui corresponde à vos disponibilités et à celles de l’enseignant(e), afin que les cours vous conviennent au mieux.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Comment s’inscrire et comment effectuer le paiement ? L’abonnement est-il mensuel ou pour une période déterminée ?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                   Pour vous inscrire, il vous suffit de nous contacter via WhatsApp ou Telegram. Nous vous accompagnerons avec plaisir dans les étapes de l’inscription. Le paiement s’effectue en ligne par virement bancaire et l’abonnement est mensuel.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (النسخة النهائية المنظمة والمعدلة) -->
+    <footer id="contact">
+        <div class="footer-content">
+            <!-- 1. قسم التواصل على اليسار -->
+            <div class="footer-col footer-contact-col">
+                <h4 class="footer-heading">Contactez-nous</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+213555483522">+213 555 48 35 22</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/213555483522" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-telegram"></i>
+                        <a href="https://t.me/+213555483522" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 2. قسم اللوغو والنص في الوسط (مزاح لليسار والأعلى لتناسق مثالى) -->
+            <div class="footer-col footer-brand-col">
+                <div class="footer-logo-wrapper">
+                    <img src="logo.png" alt="Logo Qiblatouna">
+                </div>
+                <p class="footer-description">Tout comme la qibla dans la prière, notre plateforme sera votre direction pour chercher le savoir et approfondir votre compréhension de la religion.</p>
+            </div>
+
+            <!-- 3. قسم متابعتنا على اليمين -->
+            <div class="footer-col footer-social-col">
+                <h4 class="footer-heading">Suivez-nous</h4>
+                <p class="footer-social-text">Retrouvez nos actualités sur nos réseaux sociaux :</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61593973589925" class="social-icon facebook" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/qiblatouna/" class="social-icon instagram" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@qiblatouna" class="social-icon tiktok" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@Qiblatouna" class="social-icon youtube" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://t.me/qiblatouna" class="social-icon telegram" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 QIBLATOUNA ACADÉMIE. Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div id="floating-contact-container" class="floating-btn-container">
+        <a href="https://wa.me/213555483522" target="_blank" rel="noopener noreferrer" title="Contactez-nous sur WhatsApp" class="float-btn whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://t.me/+213555483522" target="_blank" rel="noopener noreferrer" title="Contactez-nous sur Telegram" class="float-btn telegram-float">
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinksMenu = document.getElementById('nav-links-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinksMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinksMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const floatingContainer = document.getElementById('floating-contact-container');
+            if (window.scrollY > 300) {
+                floatingContainer.classList.add('show');
+            } else {
+                floatingContainer.classList.remove('show');
+            }
+        });
+
+        const sections = document.querySelectorAll('section, footer');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active-link');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active-link');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

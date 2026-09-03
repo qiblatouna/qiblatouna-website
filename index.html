@@ -714,6 +714,26 @@
         box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.4);
     }
 }
+
+        /* Par défaut (Ordinateur) */
+.hero {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Sur les téléphones portables (Écrans de moins de 768px) */
+@media (max-width: 768px) {
+    .hero {
+        /* Option A : Mettre une couleur de fond unie à la place de l'image */
+        background-image: none !important;
+        background-color: var(--bg-beige); 
+
+        /* Option B : Si vous préférez une autre image plus adaptée au format vertical */
+        /* background-image: url('bg-mobile.jpg') !important; */
+    }
+}
+        
     </style>
 </head>
 <body>
